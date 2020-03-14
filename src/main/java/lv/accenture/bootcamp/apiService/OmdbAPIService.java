@@ -52,15 +52,18 @@ public class OmdbAPIService {
 			}
 
 			String jsonResponse = sb.toString();
-			System.out.println("im batman"+ sb);
+
+//			jsonResponse = jsonResponse.toUpperCase();
+			System.out.println("im batman"+ jsonResponse);
 			bufferedReader.close();
 			
 			Gson gson = new Gson();
 			SearchResponse response = gson.fromJson(jsonResponse, SearchResponse.class);
 			System.out.println(response);
 			
-			String title = response.getSearch().get(0).getTitle();
-			System.out.println(title);
+			String imdbID = response.getSearch().get(0).getImdbID();
+			System.out.println(imdbID);
+			
 
         
 

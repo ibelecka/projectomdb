@@ -2,62 +2,42 @@ package lv.accenture.bootcamp.apiService;
 
 public class SearchResult {
 
-	private String title;
+	private String Title;
 	
-	private int year;
+	private String Year;
 	
 	private String imdbID;
 	
-	private String type;
+	private String Type;
 	
-	private String poster;
+	private String Poster;
 
 	public String getTitle() {
-		return title;
+		return Title;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public int getYear() {
-		return year;
-	}
-
-	public void setYear(int year) {
-		this.year = year;
+	public String getYear() {
+		return Year;
 	}
 
 	public String getImdbID() {
 		return imdbID;
 	}
 
-	public void setImdbID(String imdbID) {
-		this.imdbID = imdbID;
-	}
-
 	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
+		return Type;
 	}
 
 	public String getPoster() {
-		return poster;
-	}
-
-	public void setPoster(String poster) {
-		this.poster = poster;
+		return Poster;
 	}
 
 	@Override
 	public String toString() {
-		return "SearchResult [title=" + title + ", year=" + year + ", imdbID=" + imdbID + ", type=" + type + ", poster="
-				+ poster + "]";
+		return "SearchResult [Title=" + Title + ", Year=" + Year + ", imdbID=" + imdbID + ", Type=" + Type + ", Poster="
+				+ Poster + "]";
 	}
 	
-	
+
 	
 }
