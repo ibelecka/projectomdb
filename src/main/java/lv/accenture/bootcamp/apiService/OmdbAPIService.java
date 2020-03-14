@@ -30,11 +30,11 @@ import com.google.gson.JsonSyntaxException;
 public class OmdbAPIService {
 
 	@Value("${api.request}")
-	private String requestUrl = "http://www.omdbapi.com/?apikey=fe474bfb&";
+	private String requestUrl = "http://www.omdbapi.com/?apikey=fe474bfb";
 
 	public void getFilm(String requestedFilm) {
 		try {
-			URL url = new URL(requestUrl + "&t=" + requestedFilm);
+			URL url = new URL(requestUrl + "&s=" + requestedFilm);
 			HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
 			urlConnection.setRequestMethod("GET");
 			urlConnection.setReadTimeout(3000);
@@ -56,9 +56,11 @@ public class OmdbAPIService {
 			bufferedReader.close();
 			
 			Gson gson = new Gson();
-			OmdbAPIResponse response = gson.fromJson(jsonResponse, OmdbAPIResponse.class);
+			SearchResponse response = gson.fromJson(jsonResponse, SearchResponse.class);
 			System.out.println(response);
-
+			
+			String title = response.getSearch().get(0).getTitle();
+			System.out.println(title);
 
         
 
